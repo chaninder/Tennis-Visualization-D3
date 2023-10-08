@@ -1,0 +1,172 @@
+
+<html>  
+<head>  
+<script type="text/javascript" src="app.js">
+    </script>  
+<link rel="stylesheet" href="styles.css">
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+</head>
+<body onload=final_proj()> 
+
+
+<div>
+<h2 class="section">A Deep Dive into ATP Professional Tennis:<br> How the Game Has Changed Over the Years</h2>
+
+<br>
+<div>
+<h3></h3>
+
+<h4 class="writeup">
+
+    Throughout this dashboard, we will be exploring how certain aspects of the game have of tennis have changed over the years. Then, later
+    we will be doing a deep dive into the 2010 season and analyzing one of the fan-favorite aspect of the game - SERVES!
+    <br>
+    <br>
+    For the first visualization in our Deep Dive, I have created a bar plot. I split the data by the Grand Slam Tournaments and have plotted
+    the average length of a match played per Grand Slam. When you click through the years, you will notice that grand slam with the longest matches on average
+    is highlighted in orange. 
+    
+    In terms of color scheme, I decided to go with ATP Tennis blue for the bars, tennis ball neon for the border, tennis ball green for the buttons, and I threw
+    in orange to help the tallest bar stand out. Marks - rectangular bar, Channels - Height of the bar, position of the bar, color of the bar.
+
+    One of the interesting ways we can see the game has changed over the years is by observing which grand slam tournament has longer matches on average. Here we notice that
+    the tournaments that are played on hard courts (US Open and Australian Open) have predominantly been the longer matches throughout 2014, 2016, and 2018. Whereas, in 2010 and 2012, 
+    grass and clay courts had longer matches. Very interesting!
+
+
+
+
+</h4>
+
+<div id="v1">
+
+
+    <!-- Buttons for viz1 year toggle -->
+    <button onclick="update(data_2010)">2010</button>
+    <button onclick="update(data_2012)">2012</button>
+    <button onclick="update(data_2014)">2014</button>
+    <button onclick="update(data_2016)">2016</button>
+    <button onclick="update(data_2018)">2018</button>
+    </div>
+    
+    <div id="v1_plot" class="center_plot">
+    </div><br>
+</div>    
+</div>
+    
+<div>
+<h3></h3>
+
+<h4 class="writeup">
+
+    In this section, we explore what proportion of the points won by the top 10 ranked players (ties included) were service points vs. non-service points. It seems that throughout the years,
+    players tend to win roughly the same amount of points regardless of serve, but have always won slightly more when they DO serve. In the later years, service points have been dominating just a tiny bit more, which may
+    show that players tend to rely on their serves more now to take control of points and win. Here is yet another intersting way to see how the game has changed, or even stayed mostly the same, over the years.
+    <br>
+    <br>
+    Color scheme - Wimbeldon green for service points, clay-court orange for non-service points, buttons are again tennis-ball green (as they were in visualization 1).
+    Marks - In this stacked bar plot, we have rectangles to represent the data points (2 rectangles to make up a larger rectangle).
+    Channels - Bar height(s), Color.
+
+    I also have a tooltip here which allows you to hover the plot and explore the associated data. You will notice that the background of the tooltip is also ATP Tennis blue.
+
+</h4>
+
+<div id="v2">
+
+    <!-- Buttons for viz2 year toggle -->
+    <button onclick="update_2(data_2010_v2)">2010</button>
+    <button onclick="update_2(data_2012_v2)">2012</button>
+    <button onclick="update_2(data_2014_v2)">2014</button>
+    <button onclick="update_2(data_2016_v2)">2016</button>
+    <button onclick="update_2(data_2018_v2)">2018</button>
+    </div>
+    <h4></h4>
+    <div id="v2_plot" class="center_plot">
+    </div>
+</div>    
+
+<div>
+<h3></h3>
+
+<h4 class="writeup">
+
+    Now that we are on the topic of serves, we will explore which countries the best servers come from by taking a deeper dive into the 2010 season of professional tennis.
+    To do this, I grouped the players by nationality and calculated the mean number of aces that players have hit per match. We can see a lot of the best servers come from European countries. 
+    America also has some very elite servers.
+
+    Note, we have covered some general aspects of how tennis has changed over the years and now we are doing a deep dive into the 2010 season. This visualization relates back
+    to the previous visualization of my stacked bar plot by diving deeper into the topic of serves.
+
+    <br>
+    <br>
+    Color scheme - Wimbedlon green for the map, Wimbeldon purple for the circles, tennis orange for the circle stroke.
+    Marks - Circles are what we use to represent the actual data of how many aces players hit on average.
+    Channels - Position (the position of a circle denotes which country the circle is representing), Color (each country's aces are represented by Wimedlon Purple),
+     Size (the bigger the circle the more aces we are denoting)
+</h4>
+ 
+<div id="v3">
+
+    </div>
+    <h4></h4>
+    <div id="v3_plot" class="center_plot">
+    </div>
+</div>    
+   
+<h4 class="writeup">
+
+    Now let's dive even deeper into our 2010 serve analysis. Here I've created a non-standard Bubble Plot to represent 3 characteristics. Each bubble on the plot represents
+    a player's stats for a given match. On the x-axis, we have the number of first serves that Player A (we will call him Player A for ease of explanation) hit in throughout the match. On the y-axis, we denote 
+    the number of points that Player A won on their serve. The size of the bubble denotes how many double faults that player hit throughout the match. This plot relates back to our overall
+    theme/story of serve analysis and we can see that there is a general trend where the more consistent the first serve is, the more points the player tends to win. However, it is interesting
+    to see that the players that do have more consistent first serves ALSO tend to hit more double faults, meaning that their second serve is NOT as consistent. These kinds of players rely on their first
+    serve more to dominate and win the point. Very interesting!
+    <br>
+    <br>
+    Color scheme - ATP Tennis blue to represent the bubbles.
+    Marks - Circles (used to represent a player and his stats)
+    Channels - Position (their position is determined by their corresponding stats on the x and y axes), Color (bubble color), Opacity (each bubble is given the same opacity),
+    Size (the size of the bubble is determined by a 3rd variable - # of double faults).
+
+    
+    
+</h4>
+
+<div id="v4">
+
+    </div>
+    <h4></h4>
+    <div id="v4_plot" class="center_plot">
+    </div>
+</div> 
+
+
+<h4 class="writeup">
+
+    Finally, we will complement our serve analysis from the previous visualization by exploring how well players perform when they RETURN serves. I have created a barplot here which 
+    represents some statistics about the number of return points players in 2010 won per match. We can see that the middle 50% of our data is quite well spread, ranging from 30-50 points won on the return.
+    The median number of points won on the return seems to lie smack dab in the middle at about 41 points per match. Another nice, interesting statistic to top off our overall analysis!
+    NOTE: This plot clearly relates to the previous ones as it analyzes a complimentary feature/component of the game.
+    <br>
+    <br>
+    Color scheme - Tennis green to represent the boxes, black to sepearate the boxes.
+    Marks - Rectangles (used to represent the data)
+    Channels - Color (all rectangles are green), Length/height (used to represent the statistic)
+    
+    
+</h4>
+
+    
+<div id="v5">
+
+    </div>
+    <h4></h4>
+    <div id="v5_plot" class="center_plot">
+    </div>
+</div> 
+
+   
+</body>  
+</html>  
